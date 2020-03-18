@@ -16,7 +16,13 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W)){
+        if (Input.GetKey(KeyCode.Space))
+            Cursor.lockState = Cursor.lockState = CursorLockMode.Locked;
+
+        if (Input.GetKey(KeyCode.Escape))
+            Cursor.lockState = Cursor.lockState = CursorLockMode.None;
+
+        if (Input.GetKey(KeyCode.W)){
             rb.AddForce(new Vector3(0, 0, thrust));
         }
 
