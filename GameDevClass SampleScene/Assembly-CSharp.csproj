@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MoveScript.cs" />
+    <Compile Include="Assets\Scripts\RotateCamera.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Joe/Documents/GitHub/UnityClassDemoGit/GameDevClass SampleScene/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
