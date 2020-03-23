@@ -621,6 +621,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   thrust: 50
   maxSpeed: 2
+  goingForward: 0
+  goingLeft: 0
+  playerBody: {fileID: 928111068}
+  mouseSensitivity: 1
 --- !u!1 &1013108899
 GameObject:
   m_ObjectHideFlags: 0

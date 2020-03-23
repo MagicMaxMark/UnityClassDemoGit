@@ -10,6 +10,11 @@ public class MoveScript : MonoBehaviour
 
     public int goingForward = 0; //0 is null, 1 is true, 2 is false
     public int goingLeft = 0; //0 is null, 1 is true, 2 is false
+
+    public Transform playerBody;
+    public float mouseSensitivity;
+
+    float xAxisClamp = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,12 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotateCamera();
+        Move();
+    }
+
+    void Move()
+    {
         if (Input.GetKey(KeyCode.Escape))
             Cursor.lockState = Cursor.lockState = CursorLockMode.None;
 
@@ -28,7 +39,8 @@ public class MoveScript : MonoBehaviour
         goingLeft = 0;
 
         //if gets input and turns it into variables
-        if (Input.GetKey(KeyCode.W)){
+        if (Input.GetKey(KeyCode.W))
+        {
             goingForward = 1;
         }
 
@@ -103,4 +115,38 @@ public class MoveScript : MonoBehaviour
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -maxSpeed, maxSpeed));
     }
+
+    void RotateCamera()
+    {
+        float MouseX = Input.GetAxis("Mouse X");
+        float MouseY = Input.GetAxis("Mouse Y");
+
+        float rotAmountX = MouseX * mouseSensitivity;
+        float rotAmountY = MouseY * mouseSensitivity;
+
+        xAxisClamp -= rotAmountY;
+
+        Vector3 targetRotCam = transform.rotation.eulerAngles;
+        Vector3 targetRotBody = playerBody.rotation.eulerAngles;
+
+        targetRotCam.x -= rotAmountY;
+        targetRotCam.z = 0;
+        targetRotBody.y += rotAmountX;
+
+        if (xAxisClamp > 90)
+        {
+            xAxisClamp = 90;
+            targetRotCam.x = 90;
+        }
+        else if (xAxisClamp < -90)
+        {
+            xAxisClamp = -90;
+            targetRotCam.x = 270;
+        }
+
+
+        transform.rotation = Quaternion.Euler(targetRotCam);
+        playerBody.rotation = Quaternion.Euler(targetRotBody);
+    }
 }
+
