@@ -19,7 +19,7 @@ public class MoveScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        Cursor.lockState = Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
