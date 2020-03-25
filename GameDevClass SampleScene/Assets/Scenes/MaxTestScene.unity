@@ -376,7 +376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928111068}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &346929241
 MonoBehaviour:
@@ -791,6 +791,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &847375807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847375808}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847375808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847375807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.266, z: 1.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928111068}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &928111064
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +835,7 @@ GameObject:
   - component: {fileID: 928111065}
   - component: {fileID: 928111069}
   - component: {fileID: 928111070}
+  - component: {fileID: 928111071}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -883,6 +914,7 @@ Transform:
   m_LocalPosition: {x: 0.347, y: 3.15, z: -7.31}
   m_LocalScale: {x: 1, y: 4.7250004, z: 1.1}
   m_Children:
+  - {fileID: 847375808}
   - {fileID: 346929240}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -920,6 +952,20 @@ MonoBehaviour:
   maxSpeed: 4
   goingForward: 0
   goingLeft: 0
+--- !u!114 &928111071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928111064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470722e1864d6487eb34eb6aa70845f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6412022489564144763, guid: ca1d3be4b3cba47a1bb1f7216cfe356a, type: 3}
+  bulletSpawnPoint: {fileID: 847375808}
 --- !u!1 &1013108899
 GameObject:
   m_ObjectHideFlags: 0

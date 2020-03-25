@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{FE7692E5-8468-99E7-C25F-7C11CC8E647E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/bulletScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/RotateCamera.cs" Line="41" Column="10" />
+      <File FileName="Assets/Scripts/MoveScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BulletSpawnScript.cs" Line="16" Column="10" />
+      <File FileName="Assets/Scripts/bulletScript.cs" Line="10" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GameDevClass SampleScene" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="bulletScript.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="82b2b60f-ad44-4e09-8ba9-4d95304c6d15" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
