@@ -114,5 +114,8 @@ public class MoveScript : MonoBehaviour
     }
 
 
-
+    public void die()
+    {
+        print("dead");
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    public Rigidbody rb;
+    Rigidbody rb;
 
     [SerializeField]
     float eulerAngX;
@@ -19,6 +19,8 @@ public class bulletScript : MonoBehaviour
     float colEulerAngY;
     [SerializeField]
     float colEulerAngZ;
+
+    public float acceleration = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,7 @@ public class bulletScript : MonoBehaviour
 
     private void Update()
     {
-        rb.AddForce(transform.forward * 1);
-
+        rb.AddForce(transform.forward * acceleration);
         eulerAngX = transform.localEulerAngles.x;
         eulerAngY = transform.localEulerAngles.y;
         eulerAngZ = transform.localEulerAngles.z;
@@ -37,12 +38,16 @@ public class bulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.transform.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<MoveScript>().die();
+        }
+
         rb.velocity = new Vector3(0, 0, 0);
         colEulerAngX = collision.transform.localEulerAngles.x;
         colEulerAngY = collision.transform.localEulerAngles.y;
         colEulerAngZ = collision.transform.localEulerAngles.z;
 
-        print(eulerAngY + (90 - eulerAngY - colEulerAngY) * 2 + 180);
         transform.eulerAngles = new Vector3(
             transform.rotation.x,
             eulerAngY + (90 - eulerAngY - colEulerAngY) * 2 + 180,
