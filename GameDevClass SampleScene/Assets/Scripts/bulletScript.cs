@@ -42,9 +42,7 @@ public class bulletScript : MonoBehaviour
         colEulerAngY = collision.transform.localEulerAngles.y;
         colEulerAngZ = collision.transform.localEulerAngles.z;
 
-        print(transform.name);
-        print(colEulerAngY);
-        print(eulerAngY);
+        print(eulerAngY + (90 - eulerAngY - colEulerAngY) * 2 + 180);
         transform.eulerAngles = new Vector3(
             transform.rotation.x,
             eulerAngY + (90 - eulerAngY - colEulerAngY) * 2 + 180,
